@@ -4,5 +4,7 @@ public class Div {
     int b = 2;
 
     System.out.println("Div of "+ a + "& " + b + " is = " + a / b);
+
+    System.out.println("POLL SCM TEST");
   }
 }
