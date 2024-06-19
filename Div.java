@@ -3,7 +3,7 @@ public class Div {
     int a = 4;
     int b = 2;
 
-    .out.println("Div of "+ a + "& " + b + " is = " + a / b);
+    System.out.println("Div of "+ a + "& " + b + " is = " + a / b);
 
     System.out.println("POLL SCM TEST");
   }
