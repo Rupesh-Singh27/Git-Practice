@@ -1,0 +1,33 @@
+name: Build Pipeline
+
+# MUST run on pull_request so GitHub can enforce checks on PRs
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    # This "name" is what you'll add as required status check in branch protection
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js  # example — replace with your stack
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install
+        run: npm ci
+
+      - name: Run build
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
+
+      # If you have lint or security scans, put them here as additional steps.
